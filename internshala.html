@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Left Panel Navigation</title>
+  <style>
+    /* CSS for the left panel */
+    .left-panel {
+      width: 200px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #FF69B4;
+    }
+
+    .left-panel ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .left-panel li {
+      padding: 10px;
+      cursor: pointer;
+      
+    }
+
+    /* CSS for the content section */
+    .content {
+      margin-left: 200px;
+      padding: 20px;
+      
+
+    }
+  </style>
+</head>
+<body>
+  <div class="left-panel">
+    <ul>
+      <li onclick="showContent('home')">Home</li>
+      <li onclick="showContent('contact')">Contact</li>
+      <li onclick="showContent('information')">Information</li>
+      <li onclick="showContent('guide')">Guide</li>
+    </ul>
+  </div>
+  
+  <div class="content"style="background:#FFFFD2">
+    <h1>Welcome!</h1>
+    <p>This is the home page content.</p>
+    
+  </div>
+
+  <script>
+    function showContent(component) {
+      var contentDiv = document.querySelector('.content');
+      var content = '';
+      
+      if (component === 'home') {
+        content = '<h1>Welcome!</h1><p>Hello Developers,This is the home page content.</p>';
+        contentDiv.style.backgroundColor="#E2D1F9";
+      } else if (component === 'contact') {
+        content = '<h1>Contact Information</h1><p>Hello Developers,This is the contact page content.</p>';
+        contentDiv.style.backgroundColor="#FEE715";
+
+      } else if (component === 'information') {
+        content = '<h1>Information</h1><p>Hello Developers,This is the information page content.</p>';
+        contentDiv.style.backgroundColor="#CCF381";
+      } else if (component === 'guide') {
+        content = '<h1>Guide</h1><p>Hello Developers,This is the guide page content.</p>';
+        contentDiv.style.backgroundColor="pink";
+        
+      }
+      
+      contentDiv.innerHTML = content;
+    }
+  </script>
+</body>
+</html>
